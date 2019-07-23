@@ -1,16 +1,16 @@
 import React from 'react'
 
 export default class ArticleTitleBox extends React.Component {
-  state = {
-    articleTitle : ''
-  }
-
-
   render(){
-    const {title} = this.props;
+    const {article, articleMouseOver} = this.props;
+    
+    if(this.props.article){
+    }
+
     return(
       <React.Fragment>
-        {title}
+        {article.title}
+        {articleMouseOver}
       </React.Fragment>
         
     )
