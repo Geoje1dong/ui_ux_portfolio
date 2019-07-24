@@ -59,6 +59,7 @@ const StyledArticle = styled.li`
   }
   > a{
     position:relative;
+    z-index:3;
     &:hover{
       > p{
         transform: translate3d(0, -100%, 0);
