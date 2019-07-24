@@ -14,14 +14,14 @@ import * as serviceWorker from './serviceWorker';
 let xPosition;
 let yPosition;
 function _cursorMove(e){
-  // xPosition = e.clientX;
-  // yPosition = e.clientY;
-  // console.log(e.target.tagName);
-  // let target = document.querySelector('.cursor');
-  // target.style.transform = "matrix(1, 0, 0, 1, "+xPosition+", "+yPosition+") scale(.2)";
-  // if(e.target.tagName === 'A'){
-  //   target.style.transform = "matrix(1, 0, 0, 1, "+xPosition+", "+yPosition+") scale(1)";
-  // }
+  xPosition = e.clientX;
+  yPosition = e.clientY;
+  console.log(e.target.tagName);
+  let target = document.querySelector('.cursor');
+  target.style.transform = "matrix(1, 0, 0, 1, "+xPosition+", "+yPosition+") scale(.2)";
+  if(e.target.tagName === 'A'){
+    target.style.transform = "matrix(1, 0, 0, 1, "+xPosition+", "+yPosition+") scale(1)";
+  }
 }
 
 function App(){
