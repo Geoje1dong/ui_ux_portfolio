@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Geoje1dong/Geoje1dong.github.io.git/static/css/main.5b7cb6fb.chunk.css",
-    "main.js": "/Geoje1dong/Geoje1dong.github.io.git/static/js/main.b7ecc2b5.chunk.js",
-    "main.js.map": "/Geoje1dong/Geoje1dong.github.io.git/static/js/main.b7ecc2b5.chunk.js.map",
-    "runtime~main.js": "/Geoje1dong/Geoje1dong.github.io.git/static/js/runtime~main.6b8f95fe.js",
-    "runtime~main.js.map": "/Geoje1dong/Geoje1dong.github.io.git/static/js/runtime~main.6b8f95fe.js.map",
-    "static/js/2.ef026660.chunk.js": "/Geoje1dong/Geoje1dong.github.io.git/static/js/2.ef026660.chunk.js",
-    "static/js/2.ef026660.chunk.js.map": "/Geoje1dong/Geoje1dong.github.io.git/static/js/2.ef026660.chunk.js.map",
-    "index.html": "/Geoje1dong/Geoje1dong.github.io.git/index.html",
-    "precache-manifest.89253891147ddcbaa8709cff3f42bcf9.js": "/Geoje1dong/Geoje1dong.github.io.git/precache-manifest.89253891147ddcbaa8709cff3f42bcf9.js",
-    "service-worker.js": "/Geoje1dong/Geoje1dong.github.io.git/service-worker.js",
-    "static/css/main.5b7cb6fb.chunk.css.map": "/Geoje1dong/Geoje1dong.github.io.git/static/css/main.5b7cb6fb.chunk.css.map"
+    "main.css": "/static/css/main.5b7cb6fb.chunk.css",
+    "main.js": "/static/js/main.ed576161.chunk.js",
+    "main.js.map": "/static/js/main.ed576161.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.4c4c1330.chunk.js": "/static/js/2.4c4c1330.chunk.js",
+    "static/js/2.4c4c1330.chunk.js.map": "/static/js/2.4c4c1330.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.4b94957ca22f15ee8ec66356bcfdc26b.js": "/precache-manifest.4b94957ca22f15ee8ec66356bcfdc26b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5b7cb6fb.chunk.css.map": "/static/css/main.5b7cb6fb.chunk.css.map"
   }
 }
