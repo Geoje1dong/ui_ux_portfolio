@@ -11,32 +11,16 @@ import Post from './post'
 import './components/App.css'
 import * as serviceWorker from './serviceWorker';
 
-let xPosition;
-let yPosition;
-function _cursorMove(e){
-  xPosition = e.clientX;
-  yPosition = e.clientY;
-  console.log(e.target.tagName);
-  let target = document.querySelector('.cursor');
-  target.style.transform = "matrix(1, 0, 0, 1, "+xPosition+", "+yPosition+") scale(.2)";
-  if(e.target.tagName === 'A'){
-    target.style.transform = "matrix(1, 0, 0, 1, "+xPosition+", "+yPosition+") scale(1)";
-  }
-}
-
 function App(){
   return(
     <BrowserRouter>
-      <Container onMouseMove={_cursorMove}>
-        <Header />
-          <Switch>
-            <Route path="/portfolio" exact component={Articles} />
-            <Route path="/portfolio/about/" component={About} />
-            <Route path="/portfolio/Post/:id" component={Post}/>
-          </Switch>
-        <Footer />
-        <Cursor className="cursor" style={{top:xPosition, left:yPosition}}/>
-      </Container>
+      <Header />
+        <Switch>
+          <Route path="/" exact component={Articles} />
+          <Route path="/about/" component={About} />
+          <Route path="/Post/:id" component={Post}/>
+        </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }
