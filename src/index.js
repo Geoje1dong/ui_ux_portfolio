@@ -30,9 +30,9 @@ function App(){
       <Container onMouseMove={_cursorMove}>
         <Header />
           <Switch>
-            <Route path="/" exact component={Articles} />
-            <Route path="/about/" component={About} />
-            <Route path="/Post/:id" component={Post}/>
+            <Route path="/portfolio" exact component={Articles} />
+            <Route path="/portfolio/about/" component={About} />
+            <Route path="/portfolio/Post/:id" component={Post}/>
           </Switch>
         <Footer />
         <Cursor className="cursor" style={{top:xPosition, left:yPosition}}/>
