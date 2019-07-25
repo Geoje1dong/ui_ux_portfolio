@@ -14,15 +14,18 @@ class HorizontalScrollPlugin extends ScrollbarPlugin {
     // @see: https://github.com/idiotWu/smooth-scrollbar/issues/181
     
     const { x, y } = delta; 
-
     return {
       y: 0,
       x: Math.abs(x) > Math.abs(y) ? x : y,
       // x: Math.sign(x || y) * Math.sqrt(x*x + y*y),
+
+      // x: 0,
+      // y: Math.abs(y) > Math.abs(x) ? y : x,
+      // x: Math.sign(x || y) * Math.sqrt(x*x + y*y),
     };
   }
 }
-
+SmoothScrollbar.initAll();
 SmoothScrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
 
 export default class HorizontalScroll extends Component {

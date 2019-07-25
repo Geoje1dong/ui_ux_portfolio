@@ -4,16 +4,16 @@ import styled from 'styled-components'
 
 export default class Article extends React.Component{
   state = {
-    title : ''
+    title : '',
+    mobile : false
   }
 
+  // 타이핑 이펙트
   timer
-
   articleMouseOver = article => (e) => {
     const typingText = article.title;
     this._typingEffect(typingText);
   }
-  
   _typingEffect = (typingText) => {
     let i = 0;
     this.timer = setInterval(() => {
@@ -28,14 +28,22 @@ export default class Article extends React.Component{
   _randDelay = (min, max) => {
     return Math.floor(Math.random() * (max-min+1)+min);
   }
-
   _articleMouseOut = () => {
     this.setState({title:''});
     clearInterval(this.timer);
   }
 
-  render(){
+  // 모바일 대응
+  componentWillMount(){
+    console.log(window.innerWidth);
+    if(window.innerWidth < 768 ){
+      this.setState({mobile: true});
+    }
+    console.log(this.state.mobile);
+  }
 
+  render(){
+    const {mobile, title} = this.state;
     const {article} = this.props;
     
     return(
@@ -52,7 +60,7 @@ export default class Article extends React.Component{
           <ProjectLabel>{article.label} the project</ProjectLabel>
           <img src={article.img} alt={article.title}/>
           <ArticleTitle>
-            {this.state.title}
+            {mobile ? article.title : title }
           </ArticleTitle>
         </Link>
       </React.Fragment>

@@ -130,4 +130,19 @@ const ArticleBox = styled.ul`
       }
     }
   }
+  @media screen and (max-width : 1024px) {
+    top: 15.79779vw;
+    bottom: 10.79779vw;
+  }
+  @media screen and (max-width : 425px) {
+    top: 30.79779vw;
+    bottom: 10.79779vw;
+    >li{
+      padding:0 15.26593vw
+      &:first-child{
+        padding-left:5.26593vw
+      }
+    }
+    
+  }
 `
