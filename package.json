@@ -19,7 +19,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://Geoje1dong.github.io/portfolio",
+  "homepage": "http://Geoje1dong.github.io",
   "eslintConfig": {
     "extends": "react-app"
   },
