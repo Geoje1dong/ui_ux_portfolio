@@ -3,34 +3,31 @@ import styled from 'styled-components'
 
 import workData from '../work';
 import Article from './Article'
-
 import Scrollbar from './choiceScroll'
+
 
 export default class Articles extends Component {
   state = {
     articlesFadeIn : null,
-    MouseOver : false,
-    
+    view : false
   }
 
   componentDidMount() {
     setTimeout(() => this.setState({ articlesFadeIn: "articlesFadeIn" }), 0);
     const scrollbar = Scrollbar.init(document.querySelector(".horizontalScroll"), {
-      // alwaysShowTracks: true,
       overscroll: { effect: 'bounce', damping: 0.1 }
     });
     scrollbar.updatePluginOptions('choiceScroll', { vertical: false });
   }
 
+_articleView = () => {
+    this.setState({view: true});
+  }
+
   render() {
-    this.articleMouseOver = (e) => {
-      this.setState({ MouseOver : !this.state.MouseOver})
-    }
-    this.articleMouseOut = article => (e) => {
-      this.setState({ MouseOver : !this.state.MouseOver})
-    }
     return (
-      <HorizontalScroll data-foo='123' className="horizontalScroll">
+      <React.Fragment>
+      <HorizontalScroll className="horizontalScroll">
         <ArticleBox className={this.state.articlesFadeIn}>
           <li>
             <div>
@@ -46,6 +43,7 @@ export default class Articles extends Component {
           ))}
         </ArticleBox>
       </HorizontalScroll>
+      </React.Fragment>
     );
   }
 }
@@ -53,7 +51,6 @@ export default class Articles extends Component {
 const HorizontalScroll = styled.div`
   > .scroll-content{
     height:100%;
-    // height:6000px;
   }
 `
 
