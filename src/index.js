@@ -6,7 +6,6 @@ import Articles from './components/Articles'
 import Header from './components/header'
 import Footer from './components/footer'
 import About from './about'
-import Post from './post'
 import './components/App.css'
 import * as serviceWorker from './serviceWorker';
 
@@ -17,7 +16,6 @@ function App(){
         <Switch>
           <Route path="/" exact component={Articles} />
           <Route path="/about/" component={About} />
-          <Route path="/Post/:id" component={Post}/>
         </Switch>
       <Footer />
     </BrowserRouter>

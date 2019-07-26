@@ -35,11 +35,9 @@ export default class Article extends React.Component{
 
   // 모바일 대응
   componentWillMount(){
-    console.log(window.innerWidth);
     if(window.innerWidth < 768 ){
       this.setState({mobile: true});
     }
-    console.log(this.state.mobile);
   }
 
   render(){
