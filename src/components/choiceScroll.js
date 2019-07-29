@@ -26,5 +26,6 @@ class choiceScrollPlugin extends ScrollbarPlugin {
 
 
 Scrollbar.use(choiceScrollPlugin, OverscrollPlugin);
+// Scrollbar.use(choiceScrollPlugin);
 
 export default Scrollbar;

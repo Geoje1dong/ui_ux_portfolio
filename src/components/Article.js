@@ -1,13 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 export default class Article extends React.Component{
   state = {
     title : '',
-    mobile : false
+    mobile : false,
   }
-
   // 타이핑 이펙트
   timer
   articleMouseOver = article => (e) => {
@@ -32,7 +30,6 @@ export default class Article extends React.Component{
     this.setState({title:''});
     clearInterval(this.timer);
   }
-
   // 모바일 대응
   componentWillMount(){
     if(window.innerWidth < 768 ){
@@ -42,29 +39,62 @@ export default class Article extends React.Component{
 
   render(){
     const {mobile, title} = this.state;
-    const {article} = this.props;
-    
+    const {article, viewIsOpen} = this.props;
     return(
       <React.Fragment>
-        <Link 
-          className="article"
-          onMouseOver={this.articleMouseOver(article)} 
-          onMouseOut={this._articleMouseOut}
-          to={{
-            pathname : `post/${article.id}`,
-            state : `${article.content}`,
-          }}
-          >
+        <Button  onMouseOver={this.articleMouseOver(article)}  onMouseOut={this._articleMouseOut} onClick={viewIsOpen}>
           <ProjectLabel>{article.label} the project</ProjectLabel>
           <img src={article.img} alt={article.title}/>
           <ArticleTitle>
             {mobile ? article.title : title }
           </ArticleTitle>
-        </Link>
+        </Button>
       </React.Fragment>
     )
   }
 }
+
+const Button = styled.button`
+  padding:0;
+  margin:0;
+  background:none;
+  border:0;
+  text-align:left;
+  position:relative;
+  z-index:3;
+  color:#fff;
+  &:hover{
+    > p{
+      transform: translate3d(0, -100%, 0);
+      opacity: 1;
+      transition-delay: 0.4s;
+    }
+    &:after{
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition-delay: 0.2s;
+    }
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top:2px;
+    left: -130px;
+    height: 1px;
+    width: 180px;
+    background-color: rgba(255,255,255,0.8);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  > img{
+    max-width:600px;
+  }
+`
 
 const ProjectLabel = styled.p`
   position: absolute;

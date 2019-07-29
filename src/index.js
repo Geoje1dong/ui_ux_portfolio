@@ -47,9 +47,13 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     margin:0;
   }
-  a{
+  button, a{
     text-decoration:none;
     color:inherit;
+    cursor:pointer;
+    &:focus{
+      outline:none;
+    }
   }
   #root{
     background:#1f1f1f;
@@ -63,6 +67,10 @@ const GlobalStyle = createGlobalStyle`
   } 
   .scroll-content > div{
     height:100%;
+  }
+  ::selection{
+    background: #512da8;
+    // background: rgb(255, 164, 155);
   }
 `
 

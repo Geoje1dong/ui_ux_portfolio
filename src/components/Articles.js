@@ -4,12 +4,13 @@ import styled from 'styled-components'
 import workData from '../work';
 import Article from './Article'
 import Scrollbar from './choiceScroll'
-
+import ArticleView from './ArticleView'
 
 export default class Articles extends Component {
   state = {
     articlesFadeIn : null,
-    view : false
+    viewIsOpen : false,
+    viewContent: null
   }
 
   componentDidMount() {
@@ -20,8 +21,18 @@ export default class Articles extends Component {
     scrollbar.updatePluginOptions('choiceScroll', { vertical: false });
   }
 
-_articleView = () => {
-    this.setState({view: true});
+  _viewIsOpen = article => () => { 
+    this.setState({
+      viewIsOpen: true,
+      viewContent: article
+    })
+  }
+
+  _viewIsClose = () => {
+    this.setState({
+      viewIsOpen: false,
+      viewContent: null
+    })
   }
 
   render() {
@@ -38,11 +49,12 @@ _articleView = () => {
           </li>
           {workData.results.map((article) => (
             <StyledArticle key={article.id} delay={article.id}>
-              <Article article={article}/>
+              <Article article={article} viewIsOpen={this._viewIsOpen(article)}/>
             </StyledArticle>
           ))}
         </ArticleBox>
       </HorizontalScroll>
+      {this.state.viewIsOpen && <ArticleView view={this.state.viewIsOpen} viewContent={this.state.viewContent} viewIsClose={this._viewIsClose}/>}
       </React.Fragment>
     );
   }
@@ -64,42 +76,6 @@ const StyledArticle = styled.li`
   }
   &:nth-child(3n){
     align-items: flex-end;
-  }
-  > a{
-    position:relative;
-    z-index:3;
-    &:hover{
-      > p{
-        transform: translate3d(0, -100%, 0);
-        opacity: 1;
-        transition-delay: 0.4s;
-        // transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      }
-      &:after{
-        transform: scaleX(1);
-        transform-origin: left center;
-        transition-delay: 0.2s;
-      }
-    }
-    &:after{
-      content: '';
-      position: absolute;
-      top: 50%;
-      margin-top:2px;
-      left: -130px;
-      height: 1px;
-      width: 180px;
-      background-color: rgba(255,255,255,0.8);
-      transform: scaleX(0);
-      transform-origin: right center;
-      transition: transform;
-      transition-duration: 0.5s;
-      transition-delay: 0s;
-      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
-    > img{
-      max-width:600px;
-    }
   }
 `
 
