@@ -42,8 +42,7 @@ export default class Articles extends Component {
         <ArticleBox className={this.state.articlesFadeIn}>
           <li>
             <div>
-              <p>안녕하세요.</p>
-              <p>UI / UX 디자이너 <strong>김재현</strong> 입니다.</p>
+              <p>안녕하세요 <strong>김재현</strong> 입니다.</p>
               <p>저의 <strong>포트폴리오</strong>에 오신것을 환영합니다.</p>
             </div>
           </li>
@@ -111,6 +110,12 @@ const ArticleBox = styled.ul`
           margin: 0 0.2em;
           font-weight: 200;
         }
+      }
+    }
+    &:nth-child(2){
+      > button >img{
+        height:560px;
+        width:auto;
       }
     }
   }

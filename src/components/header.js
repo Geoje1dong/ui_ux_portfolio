@@ -24,6 +24,7 @@ const StyledHeader = styled.header`
   top:5.26593vw;
   left:5.26593vw;
   right:5.26593vw;
+  letter-spacing: -0.4px;
   >div{
     width:65%;
     display:inline-block;
@@ -44,7 +45,7 @@ const StyledHeader = styled.header`
       position:relative;
       margin-left:30px;
       font-weight:100;
-      font-size:1rem;
+      font-size:0.875rem;
       &:hover{
         &:after{
           transform: scaleX(1);

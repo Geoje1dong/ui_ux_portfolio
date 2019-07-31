@@ -17,6 +17,8 @@ export default class ArticleView extends React.Component{
     scrollbar.addListener((status) => {
       const yPosition = status.offset.y;
       const deviceHeight = window.innerHeight;
+      console.log(yPosition);
+      console.log(deviceHeight);
       if(yPosition > deviceHeight){
         this.setState({dummyBox:true})
       }else{
@@ -44,9 +46,9 @@ export default class ArticleView extends React.Component{
       <View effect={view} onTransitionEnd={this.transitionEnd} className={this.state.animationView}>
         <ViewHeader className="viewHeader" backgroundImage={viewContent.content[0].header_img}>
           <div>
-            <p>{viewContent.content[0].header_h2}</p>
             <h2>{viewContent.content[0].header_h1}</h2>
             <span>{viewContent.label} the project</span>
+            <p>{viewContent.content[0].header_h2}</p>
           </div>
         </ViewHeader>
         <ViewCloseButton onClick={this.handleClick}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.4 59.4"><path d="M29.7 45.3L0 15.6l1.4-1.5 28.3 28.3L58 14.1l1.4 1.5z"/></svg></ViewCloseButton>
@@ -55,7 +57,9 @@ export default class ArticleView extends React.Component{
           <ViewContent>
             <IntroText>
               <p>
-                {viewContent.content[0].description}
+                {viewContent.content[0].description. split('\n').map(line => {
+                  return (<span>{line}<br /></span>)
+                })}
               </p>
               <ol>
                 {viewContent.content[0].clist.map((list, index) => (
@@ -90,17 +94,23 @@ const ViewContent = styled.div`
   background:#fff;
   height:auto !important;
   >section{
-    padding:5.26593vw;
+    padding:0 5.26593vw 5.26593vw 5.26593vw;
     display:flex;
     justify-content:center;
+    img{
+      max-width:2000px;
+      width:100%;
+    }
   }
 `
 
-const IntroText = styled.section`
+const IntroText = styled.div`
   font-size:14px;
   line-height:1.5em;
   max-width:1024px;
   margin:0 auto;
+  padding:5.26593vw;
+  display:flex;
   > p{
     padding:0;
     margin:0 auto 0 0;
@@ -109,6 +119,17 @@ const IntroText = styled.section`
     list-style-type:disc;
     padding:0;
     margin:0;
+    padding-left:17px;
+  }
+  @media screen and (max-width : 425px) {
+    display:block!important;
+    > p{
+      display:block;
+      margin:0 0 20px; 0;
+    }
+    > ol{
+      display:block;
+    }
   }
 `
 
@@ -134,14 +155,16 @@ const ViewHeader = styled.div`
   >div{
     color:#fff;
     h2{
-      font-size:2.73828vw;
-      margin-top:10px;
+      font-size:42px;
       margin-bottom:30px;
+      font-style:italic;
     }
     p{
-      font-size:.94787vw;
-      font-weight:300;
+      font-size:14px;
+      font-weight:100;
+      font-color:rgba(255,255,255, 0.7);
       margin:0;
+      padding-top:6px;
     }
     span{
       margin:0;
