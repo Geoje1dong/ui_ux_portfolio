@@ -56,16 +56,17 @@ export default class ArticleView extends React.Component{
           <BlankBox />
           <ViewContent>
             <IntroText>
-              <p>
-                {viewContent.content[0].description. split('\n').map(line => {
-                  return (<span>{line}<br /></span>)
-                })}
-              </p>
               <ol>
                 {viewContent.content[0].clist.map((list, index) => (
                   <li key={index}>{list}</li>
                 ))}
               </ol>
+              <p>
+                {viewContent.content[0].description. split('\n').map(line => {
+                  return (<span>{line}<br /></span>)
+                })}
+              </p>
+              <a target="_blank" href={viewContent.content[0].url}>{viewContent.content[0].url}</a>
             </IntroText>
               {viewContent.content[0].section_imges.map((img, index) => (
                 <section key={index}>
@@ -110,16 +111,27 @@ const IntroText = styled.div`
   max-width:1024px;
   margin:0 auto;
   padding:5.26593vw;
-  display:flex;
+  position:relative;
   > p{
     padding:0;
     margin:0 auto 0 0;
+    width:73%;
+    float:left;
   }
   > ol{
     list-style-type:disc;
     padding:0;
     margin:0;
     padding-left:17px;
+    width:22%;
+    float:right;
+  }
+  >a {
+    margin-top:40px;
+    display:inline-block;
+    position:relative;
+    color:#512da8;
+    text-decoration:underline;
   }
   @media screen and (max-width : 425px) {
     display:block!important;
@@ -208,6 +220,7 @@ const View = styled.div`
   color:#000;
   transform:translateY(100vh);
   transition:all 0.5s cubic-bezier(0.455,0.03,0.515,0.955);
+  background:#fff;
   &.animationIn{
     transform:translateY(0vh);
   }

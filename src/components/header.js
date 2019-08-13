@@ -32,9 +32,6 @@ const StyledHeader = styled.header`
       font-size:2rem;
       font-weight:700;
       transition: all 0.5s ease;
-      &:hover{
-        color:red;
-      }
     }
   }
   >nav{
@@ -66,6 +63,9 @@ const StyledHeader = styled.header`
       }
       &:first-child{
         margin-left:0;
+        @media screen and (max-width : 425px) {
+          display:none;
+        }
       }
     }
   }

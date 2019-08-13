@@ -70,6 +70,7 @@ const GlobalStyle = createGlobalStyle`
   }
   ::selection{
     background: #512da8;
+    color:#fff;
     // background: rgb(255, 164, 155);
   }
 `

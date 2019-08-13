@@ -31,14 +31,14 @@ export default class About extends React.Component{
             <li>
               <p>진두아이에스</p>
               <div>
-                <p>한국산업인력공단에서 운영하는 월드잡플러스 사이트 UI/UX Designer</p>
+                <p>한국산업인력공단에서 운영하는 월드잡플러스 사이트 UI/UX Designer, WEB Publisher</p>
                 <p>2017.04 ~ 2019.05</p>
               </div>
             </li>
             <li>
               <p>Rengo</p>
               <div>
-                <p>렌트카 대여 b2b 사이트 UI/UX Designer</p>
+                <p>렌트카 대여 b2b 사이트 UI/UX Designer, WEB Publisher</p>
                 <p>2016.05 ~ 2017.02</p>
               </div>
             </li>
@@ -113,7 +113,7 @@ const Company = styled.ul`
   transition:all 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
   transition-delay: ${props => props.delay}s;
   margin-bottom:100px;
-  max-width:800px;
+  max-width:1000px;
   li{
     padding-bottom:3.75rem;
     margin-bottom: 3.75rem;

@@ -8,13 +8,14 @@ import ArticleView from './ArticleView'
 
 export default class Articles extends Component {
   state = {
-    articlesFadeIn : null,
     viewIsOpen : false,
-    viewContent: null
+    viewContent: null,
+    articlesFadeIn: null
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ articlesFadeIn: "articlesFadeIn" }), 0);
+
+    this.setState({articlesFadeIn:'articlesFadeIn'})
     const scrollbar = Scrollbar.init(document.querySelector(".horizontalScroll"), {
       overscroll: { effect: 'bounce', damping: 0.1 }
     });
@@ -116,6 +117,9 @@ const ArticleBox = styled.ul`
       > button >img{
         height:560px;
         width:auto;
+        @media screen and (max-width : 425px) {
+          height:60vh;
+        }
       }
     }
   }
