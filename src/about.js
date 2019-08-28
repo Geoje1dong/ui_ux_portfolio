@@ -29,7 +29,7 @@ export default class About extends React.Component{
           <Company delay="1.5">
             <h2>Work</h2>
             <li>
-              <p>진두아이에스</p>
+              <p>진두아이에스, 위지온</p>
               <div>
                 <p>한국산업인력공단에서 운영하는 월드잡플러스 사이트 UI/UX Designer, WEB Publisher</p>
                 <p>2017.04 ~ 2019.05</p>
