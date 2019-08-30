@@ -63,6 +63,9 @@ export default class About extends React.Component{
             <li>UX Design</li>
             <li>Illustration</li>
             <li>Visual Design</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
           </Skill>
         </AboutBox>
       </div>
