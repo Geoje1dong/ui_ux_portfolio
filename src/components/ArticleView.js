@@ -17,8 +17,6 @@ export default class ArticleView extends React.Component{
     scrollbar.addListener((status) => {
       const yPosition = status.offset.y;
       const deviceHeight = window.innerHeight;
-      console.log(yPosition);
-      console.log(deviceHeight);
       if(yPosition > deviceHeight){
         this.setState({dummyBox:true})
       }else{
@@ -40,8 +38,6 @@ export default class ArticleView extends React.Component{
 
   render(){
     const {viewContent, view} = this.props;
-    console.log(viewContent);
-    console.log(viewContent.content[0].header_h1);
     return(
       <View effect={view} onTransitionEnd={this.transitionEnd} className={this.state.animationView}>
         <ViewHeader className="viewHeader" backgroundImage={viewContent.content[0].header_img}>
@@ -55,19 +51,55 @@ export default class ArticleView extends React.Component{
         <ViewContentBox className="view">
           <BlankBox />
           <ViewContent>
-            <IntroText>
-              <ol>
-                {viewContent.content[0].clist.map((list, index) => (
-                  <li key={index}>{list}</li>
-                ))}
-              </ol>
-              <p>
-                {viewContent.content[0].description. split('\n').map(line => {
-                  return (<span>{line}<br /></span>)
-                })}
-              </p>
-              <a target="_blank" href={viewContent.content[0].url}>{viewContent.content[0].url}</a>
-            </IntroText>
+            <IntroBox>
+              {/* <IntroText>
+                <a target="_blank" href={viewContent.content[0].url}>{viewContent.content[0].url}</a>
+                <Description>
+                  <li>
+                    <div>
+                      <p><strong>{viewContent.content[0].description. split('\n').map(line => {
+                        return (<span>{line}<br /></span>)
+                      })}</strong></p>
+                    </div>
+                  </li>
+                  <li>
+                    <p>기여한 점</p>
+                    <div>
+                    contribution
+                      <p>한국산업인력공단에서 운영하는 월드잡플러스 사이트 UI/UX Designer, WEB Publisher</p>
+                    </div>
+                  </li>
+                  <li>
+                    <p>사용한 Skill 또는 지식</p>
+                    <div>
+                      <p>
+                        <ol>
+                          {viewContent.content[0].clist.map((list, index) => (
+                            <li key={index}>{list}</li>
+                          ))}
+                        </ol>
+                      </p>
+                    </div>
+                  </li>
+                </Description>
+                
+              </IntroText> */}
+              <IntroText>
+                <div>
+                  <ol>
+                    {viewContent.content[0].clist.map((list, index) => (
+                      <li key={index}>{list}</li>
+                    ))}
+                  </ol>
+                  <p>
+                    {viewContent.content[0].description.split('\n').map((line, index) => {
+                      return (<span key={index}>{line}<br /></span>)
+                    })}
+                  </p>
+                </div>
+                <a target="_blank" href={viewContent.content[0].url} rel="noopener noreferrer">{viewContent.content[0].url}</a>
+              </IntroText>
+            </IntroBox>
               {viewContent.content[0].section_imges.map((img, index) => (
                 <section key={index}>
                   <img src={img.imgUrl} alt={img.Alt}/>
@@ -80,6 +112,50 @@ export default class ArticleView extends React.Component{
     )
   }
 }
+
+const Description = styled.ul`
+  transition:all 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
+  transition-delay: ${props => props.delay}s;
+  max-width:1000px;
+  > li{
+    padding-bottom:3.75rem;
+    margin-bottom: 3.75rem;
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+    >p {
+      font-size:1.25rem;
+      font-weight:700;
+      margin-bottom:0;
+    }
+    > div{
+      font-weight:200;
+      > p{
+        font-weight:400;
+        margin-bottom:0;
+        &:last-child{
+          font-size:12px;
+        }
+        &:before{
+          content:'';
+          display:block;
+          clear: both;
+        }
+        > ol{
+          margin-top:12px;
+          list-style-type:disc;
+          padding:0;
+          margin:0;
+          padding-left:17px;
+          display:block;
+        }
+      }
+    }
+  }
+  > li:after{
+    content:'';
+    display:block;
+    clear: both
+  }
+`
 
 const ScrollDummyBox = styled.div`
   background:#fff;
@@ -105,26 +181,41 @@ const ViewContent = styled.div`
   }
 `
 
+const IntroBox = styled.div`
+  // height:100vh;
+  background:#f5f5f5;
+`
+
 const IntroText = styled.div`
   font-size:14px;
   line-height:1.5em;
   max-width:1024px;
   margin:0 auto;
-  padding:5.26593vw;
+  padding:10.53186vw 5.26593vw;
   position:relative;
-  > p{
-    padding:0;
-    margin:0 auto 0 0;
-    width:73%;
-    float:left;
-  }
-  > ol{
-    list-style-type:disc;
-    padding:0;
-    margin:0;
-    padding-left:17px;
-    width:22%;
-    float:right;
+  >div {
+    overflow:hidden;
+    > p{
+      padding:0;
+      margin:0px 0 20px 0;
+      width:73%;
+      float:left;
+      display:block;
+      &:before{
+        content:'';
+        display:block;
+        clear: both;
+      }
+    }
+    > ol{
+      list-style-type:disc;
+      padding:0;
+      margin:0;
+      padding-left:17px;
+      display:block;
+      width:22%;
+      float:right;
+    }
   }
   >a {
     margin-top:40px;
@@ -135,13 +226,20 @@ const IntroText = styled.div`
   }
   @media screen and (max-width : 425px) {
     display:block!important;
-    > p{
-      display:block;
-      margin:0 0 20px; 0;
+    >div{
+      > p{
+        display:block;
+        margin:20px 0 20px 0;
+        width:100%;
+        float:none;
+      }
+      > ol{
+        display:block;
+        width:100%;
+        float:none;
+      }
     }
-    > ol{
-      display:block;
-    }
+    
   }
 `
 
