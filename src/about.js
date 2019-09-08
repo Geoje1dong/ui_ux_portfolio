@@ -1,5 +1,4 @@
 import React from 'react'
-// import VerticalityScroll from './components/verticalityScroll'
 import styled from 'styled-components'
 import Scrollbar from "./components/choiceScroll";
 

@@ -6,11 +6,16 @@ export default class ArticleView extends React.Component{
 
   state = {
     animationView : null,
-    dummyBox: false
+    dummyBox: false,
+    animationEvent: null,
+    closeCheck:false,
+    openChek:true
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ animationView: "animationIn" }), 0);
+    console.log('a');
+    // setTimeout(() => this.setState({ animationView: "animationIn" }), 0);
+    setTimeout(() => this.setState({ animationView:"animationIn"}), 0);
     const scrollbar = Scrollbar.init(document.querySelector(".view"), {
       overscroll: false
     });
@@ -27,24 +32,43 @@ export default class ArticleView extends React.Component{
 
   handleClick = (e) => {
     e.preventDefault();
-    this.setState({ animationView: "animationOut" });
+    this.setState({ animationView: "animationOut", animationEvent: 'animationClose' });
+    // this.setState({closeCheck:true, openChek:false})
+    // if (this.state.closeCheck){
+    //   this.setState({animationEvent: 'active'})
+    // }
   }
 
   transitionEnd = () => {
+    if (this.state.animationView === 'animationIn'){
+      this.setState({animationEvent: 'active'})
+    }
     if (this.state.animationView === "animationOut") {
       this.props.viewIsClose();      
     }
   }
 
+  _getAnimationBox(){
+    if(this.state.openChek){
+      return <BlackBox className={this.state.animationEvent}/>
+    }else if(!this.state.openChek){
+      return <CloseBox className={this.state.animationEvent}/>
+    }
+  }
+
   render(){
     const {viewContent, view} = this.props;
+    const animationBox = this._getAnimationBox();
     return(
       <View effect={view} onTransitionEnd={this.transitionEnd} className={this.state.animationView}>
-        <ViewHeader className="viewHeader" backgroundImage={viewContent.content[0].header_img}>
+        <ViewHeader className="viewHeader" backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].header_img}`}>
           <div>
-            <h2>{viewContent.content[0].header_h1}</h2>
+            <ViewHeaderText fontSize='42px' fontWeight='700' fontStyle='italic' margin='0 0 30px 0'><span>{viewContent.content[0].header_h1}</span></ViewHeaderText>
+            <ViewHeaderText><span>{viewContent.label} the project</span></ViewHeaderText>
+            <ViewHeaderText margin='6px 0 0 0'><span>{viewContent.content[0].header_h2}</span></ViewHeaderText>
+            {/* <h2>{viewContent.content[0].header_h1}</h2>
             <span>{viewContent.label} the project</span>
-            <p>{viewContent.content[0].header_h2}</p>
+            <p>{viewContent.content[0].header_h2}</p> */}
           </div>
         </ViewHeader>
         <ViewCloseButton onClick={this.handleClick}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.4 59.4"><path d="M29.7 45.3L0 15.6l1.4-1.5 28.3 28.3L58 14.1l1.4 1.5z"/></svg></ViewCloseButton>
@@ -108,10 +132,48 @@ export default class ArticleView extends React.Component{
           </ViewContent>
         </ViewContentBox>
         {this.state.dummyBox && <ScrollDummyBox />}
+        {/* {this.state.openChek && } */}
+        {animationBox}
       </View>
     )
   }
 }
+
+const BlackBox = styled.div`
+  background:#f5f5f5;
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  top:0vh;
+  left:0;
+  z-index:888;
+  &.active{
+    // transition-delay: 0.5s;
+    transition:all 0.3s cubic-bezier(0.455,0.03,0.515,0.955);
+    transform:translateY(-100vh);
+  } 
+  &.ready{
+    z-index:-1;
+  }
+`
+
+const CloseBox = styled.div`
+  background:red;
+  // background:#f5f5f5;
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  top:100vh;
+  left:0;
+  z-index:888;
+  &.active{
+    transition:all 0.3s cubic-bezier(0.455,0.03,0.515,0.955);
+    transform:translateY(-100vh);
+  } 
+  &.ready{
+    z-index:-1;
+  }
+`
 
 const Description = styled.ul`
   transition:all 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
@@ -262,28 +324,21 @@ const ViewHeader = styled.div`
   display:flex;
   align-items: center;
   justify-content: center;
-  >div{
-    color:#fff;
-    h2{
-      font-size:42px;
-      margin-bottom:30px;
-      font-style:italic;
-    }
-    p{
-      font-size:14px;
-      font-weight:100;
-      font-color:rgba(255,255,255, 0.7);
-      margin:0;
-      padding-top:6px;
-    }
-    span{
-      margin:0;
-      font-size:14px;
-      font-weight:100;
-    }
-  }
 `
 
+const ViewHeaderText = styled.p`
+  font-size:${props => props.fontSize ? props.fontSize : '14px'};
+  font-weight:${props => props.fontWeight ? props.fontWeight : '100'};
+  color:${props => props.fontColor ? props.fontColor : '#fff'};
+  margin:${props => props.margin ? props.margin : '0'};
+  font-style:${props => props.fontStyle ? props.fontStyle : 'inherit'}
+  padding:0;
+  overflow:hidden;
+  position:relative;
+  > span{
+    transform:translate3d(0, 100%, 0);
+  }
+`
 const ViewContentBox = styled.div`
   width:100vw;
   position:relative;
@@ -317,11 +372,16 @@ const View = styled.div`
   left:0;
   color:#000;
   transform:translateY(100vh);
-  transition:all 0.5s cubic-bezier(0.455,0.03,0.515,0.955);
   background:#fff;
   &.animationIn{
     transform:translateY(0vh);
+    transition:transform 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
+  }
+  &.animationReady{
+    transform:translateY(0vh);
   }
   &.animationOut{
+    transform:translateY(-100vh);
+    transition:transform 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
   }
 `
