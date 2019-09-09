@@ -11,7 +11,7 @@ export default class Header extends React.Component{
         </div>
         <nav>
         <NavLink to="/">Work</NavLink>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/resume">Resume</NavLink>
         </nav>
       </StyledHeader>
     )

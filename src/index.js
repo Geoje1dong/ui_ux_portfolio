@@ -6,7 +6,7 @@ import {createGlobalStyle} from 'styled-components'
 import Articles from './components/Articles'
 import Header from './components/header'
 import Footer from './components/footer'
-import About from './about'
+import Resume from './resume'
 import Post from './post'
 
 function App(){
@@ -16,7 +16,7 @@ function App(){
       <Header />
         <Switch>
           <Route path="/" exact component={Articles} />
-          <Route path="/about/" component={About} />
+          <Route path="/resume/" component={Resume} />
           <Route path="/Post/:id" component={Post}/>
         </Switch>
       <Footer />

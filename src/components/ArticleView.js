@@ -177,49 +177,49 @@ const CloseBox = styled.div`
   }
 `
 
-const Description = styled.ul`
-  transition:all 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
-  transition-delay: ${props => props.delay}s;
-  max-width:1000px;
-  > li{
-    padding-bottom:3.75rem;
-    margin-bottom: 3.75rem;
-    border-bottom:1px solid rgba(0, 0, 0, 0.1);
-    >p {
-      font-size:1.25rem;
-      font-weight:700;
-      margin-bottom:0;
-    }
-    > div{
-      font-weight:200;
-      > p{
-        font-weight:400;
-        margin-bottom:0;
-        &:last-child{
-          font-size:12px;
-        }
-        &:before{
-          content:'';
-          display:block;
-          clear: both;
-        }
-        > ol{
-          margin-top:12px;
-          list-style-type:disc;
-          padding:0;
-          margin:0;
-          padding-left:17px;
-          display:block;
-        }
-      }
-    }
-  }
-  > li:after{
-    content:'';
-    display:block;
-    clear: both
-  }
-`
+// const Description = styled.ul`
+//   transition:all 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
+//   transition-delay: ${props => props.delay}s;
+//   max-width:1000px;
+//   > li{
+//     padding-bottom:3.75rem;
+//     margin-bottom: 3.75rem;
+//     border-bottom:1px solid rgba(0, 0, 0, 0.1);
+//     >p {
+//       font-size:1.25rem;
+//       font-weight:700;
+//       margin-bottom:0;
+//     }
+//     > div{
+//       font-weight:200;
+//       > p{
+//         font-weight:400;
+//         margin-bottom:0;
+//         &:last-child{
+//           font-size:12px;
+//         }
+//         &:before{
+//           content:'';
+//           display:block;
+//           clear: both;
+//         }
+//         > ol{
+//           margin-top:12px;
+//           list-style-type:disc;
+//           padding:0;
+//           margin:0;
+//           padding-left:17px;
+//           display:block;
+//         }
+//       }
+//     }
+//   }
+//   > li:after{
+//     content:'';
+//     display:block;
+//     clear: both
+//   }
+// `
 
 const ScrollDummyBox = styled.div`
   background:#fff;
