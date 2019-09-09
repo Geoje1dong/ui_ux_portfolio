@@ -61,7 +61,7 @@ export default class ArticleView extends React.Component{
     const animationBox = this._getAnimationBox();
     return(
       <View effect={view} onTransitionEnd={this.transitionEnd} className={this.state.animationView}>
-        <ViewHeader className="viewHeader" backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].header_img}`}>
+        <ViewHeader className="viewHeader">
           <div>
             <ViewHeaderText className={this.state.animationEvent} delay='1000' fontSize='42px' fontWeight='700' fontStyle='italic' margin='0 0 30px 0'><span>{viewContent.content[0].header_h1}</span></ViewHeaderText>
             <ViewHeaderText className={this.state.animationEvent} delay='5'><span>{viewContent.label} the project</span></ViewHeaderText>
@@ -70,6 +70,8 @@ export default class ArticleView extends React.Component{
             <span>{viewContent.label} the project</span>
             <p>{viewContent.content[0].header_h2}</p> */}
           </div>
+          <div></div>
+          <ViewHeaderImg backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].header_img}`}/>
         </ViewHeader>
         <ViewCloseButton onClick={this.handleClick}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.4 59.4"><path d="M29.7 45.3L0 15.6l1.4-1.5 28.3 28.3L58 14.1l1.4 1.5z"/></svg></ViewCloseButton>
         <ViewContentBox className="view">
@@ -309,8 +311,25 @@ const BlankBox = styled.div`
   height:100vh;
 `
 
-const ViewHeader = styled.div`
+const ViewHeaderImg = styled.div`
   background-image:url(${props => props.backgroundImage});
+  position:absolute;
+  top:50%;
+  left:50%;
+  bottom:0;
+  right:0;
+  width:120vw;
+  height:120vh;
+  background-color:rgba(0,0,0,0.25);
+  background-blend-mode:multiply;
+  filter: blur(10px);
+  background-size:cover;
+  background-position:center;  
+  transform:translate(-50%, -50%);
+`
+
+const ViewHeader = styled.div`
+  overflow:hidden;
   width:100vw;
   height:100vh;
   position:absolute;
@@ -318,14 +337,12 @@ const ViewHeader = styled.div`
   left:0;
   bottom:0;
   right:0;
-  background-color:rgba(0,0,0,0.25);
-  background-blend-mode:multiply;
-  background-filter: blur(100%);
-  background-size:cover;
-  background-position:center;  
   display:flex;
   align-items: center;
   justify-content: center;
+  >div:first-child{
+    z-index:1;
+  }
 `
 
 const ViewHeaderText = styled.p`

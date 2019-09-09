@@ -72,8 +72,8 @@ const GlobalStyle = createGlobalStyle`
     // background: #512da8;
     // color:#fff;
     background:none;
-    color:rgb(255, 111, 97);
-    // background: rgb(255, 164, 155);
+    // color:rgb(255, 111, 97);
+    color:#a590ff;
   }
 `
 

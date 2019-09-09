@@ -110,7 +110,7 @@ const IntroText = styled.p`
 `
 
 const Company = styled.ul`
-  transition:all 0.4s cubic-bezier(0.455,0.03,0.515,0.955);
+  transition:all 0.6s cubic-bezier(0.455,0.03,0.515,0.955);
   transition-delay: ${props => props.delay}s;
   margin-bottom:100px;
   max-width:1000px;
