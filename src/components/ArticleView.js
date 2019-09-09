@@ -44,7 +44,7 @@ export default class ArticleView extends React.Component{
       this.setState({animationEvent: 'active'})
     }
     if (this.state.animationView === "animationOut") {
-      this.props.viewIsClose();      
+      this.props.viewIsClose();
     }
   }
 
@@ -63,9 +63,9 @@ export default class ArticleView extends React.Component{
       <View effect={view} onTransitionEnd={this.transitionEnd} className={this.state.animationView}>
         <ViewHeader className="viewHeader" backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].header_img}`}>
           <div>
-            <ViewHeaderText fontSize='42px' fontWeight='700' fontStyle='italic' margin='0 0 30px 0'><span>{viewContent.content[0].header_h1}</span></ViewHeaderText>
-            <ViewHeaderText><span>{viewContent.label} the project</span></ViewHeaderText>
-            <ViewHeaderText margin='6px 0 0 0'><span>{viewContent.content[0].header_h2}</span></ViewHeaderText>
+            <ViewHeaderText className={this.state.animationEvent} delay='1000' fontSize='42px' fontWeight='700' fontStyle='italic' margin='0 0 30px 0'><span>{viewContent.content[0].header_h1}</span></ViewHeaderText>
+            <ViewHeaderText className={this.state.animationEvent} delay='5'><span>{viewContent.label} the project</span></ViewHeaderText>
+            <ViewHeaderText className={this.state.animationEvent} delay='5' margin='6px 0 0 0'><span>{viewContent.content[0].header_h2}</span></ViewHeaderText>
             {/* <h2>{viewContent.content[0].header_h1}</h2>
             <span>{viewContent.label} the project</span>
             <p>{viewContent.content[0].header_h2}</p> */}
@@ -126,7 +126,7 @@ export default class ArticleView extends React.Component{
             </IntroBox>
               {viewContent.content[0].section_imges.map((img, index) => (
                 <section key={index}>
-                  <img src={img.imgUrl} alt={img.Alt}/>
+                  <img src={process.env.PUBLIC_URL + `${img.imgUrl}`} alt={img.Alt}/>
                 </section>
               ))}
           </ViewContent>
@@ -301,7 +301,6 @@ const IntroText = styled.div`
         float:none;
       }
     }
-    
   }
 `
 
@@ -311,6 +310,7 @@ const BlankBox = styled.div`
 `
 
 const ViewHeader = styled.div`
+  background-image:url(${props => props.backgroundImage});
   width:100vw;
   height:100vh;
   position:absolute;
@@ -318,9 +318,11 @@ const ViewHeader = styled.div`
   left:0;
   bottom:0;
   right:0;
-  background-image:url(${props => props.backgroundImage});
+  background-color:rgba(0,0,0,0.25);
+  background-blend-mode:multiply;
+  background-filter: blur(100%);
   background-size:cover;
-  background-position:center;
+  background-position:center;  
   display:flex;
   align-items: center;
   justify-content: center;
@@ -331,12 +333,20 @@ const ViewHeaderText = styled.p`
   font-weight:${props => props.fontWeight ? props.fontWeight : '100'};
   color:${props => props.fontColor ? props.fontColor : '#fff'};
   margin:${props => props.margin ? props.margin : '0'};
-  font-style:${props => props.fontStyle ? props.fontStyle : 'inherit'}
+  font-style:${props => props.fontStyle ? props.fontStyle : 'inherit'};
   padding:0;
   overflow:hidden;
   position:relative;
   > span{
-    transform:translate3d(0, 100%, 0);
+    display:inline-block;
+    transition-delay: ${props => props.delay}s;  
+    transform:translate3d(0, 100%, 0);    
+    transition:all 0.6s cubic-bezier(0.455,0.03,0.515,0.955);
+  }
+  &.active{
+    >span{
+      transform:translate3d(0, 0, 0);
+    }
   }
 `
 const ViewContentBox = styled.div`

@@ -65,7 +65,10 @@ const Button = styled.button`
   position:relative;
   z-index:3;
   color:#fff;
+  transition: transform 0.5s, filter 0.5s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   &:hover{
+    transform:translateY(-10px);
     > p{
       transform: translate3d(0, -100%, 0);
       opacity: 1;
@@ -75,6 +78,9 @@ const Button = styled.button`
       transform: scaleX(1);
       transform-origin: left center;
       transition-delay: 0.2s;
+    }
+    >img{
+      filter:brightness(70%);
     }
   }
   &:after{
@@ -95,6 +101,8 @@ const Button = styled.button`
   }
   > img{
     max-width:600px;
+    filter:brightness(80%);
+    box-shadow:0px 20px 35px 0px rgba(0, 0, 0, 0.5);
   }
 `
 
@@ -113,16 +121,19 @@ const ProjectLabel = styled.p`
   transition: opacity, transform;
   transition-duration: 0.2s;
   transition-delay: 0s;
-  transition-timing-function: 
+  color:rgba(255,255,255,0.8);
+  z-index:3;
 `
 
 const ArticleTitle = styled.h2`
   color:#fff;
   margin: 0;
   margin-top: 8px;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 16px;
   line-height: 29px;
   height: 29px;
   min-width: 10px;
+  letter-spacing:1px;
+  font-style:italic;
 `

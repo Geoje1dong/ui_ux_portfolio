@@ -105,8 +105,6 @@ const IntroText = styled.p`
   line-height:1.8em;
   font-weight:200;
   margin:0 0 10px 0;
-  // transition:all ${props => props.delay}s cubic-bezier(0.455,0.03,0.515,0.955);
-  // transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transition:all 0.6s cubic-bezier(0.455,0.03,0.515,0.955);
   transition-delay: ${props => props.delay}s;
 `
@@ -136,6 +134,7 @@ const Company = styled.ul`
         margin-bottom:0;
         &:last-child{
           font-size:12px;
+          color:rgba(255,255,255,0.6)
         }
       }
     }

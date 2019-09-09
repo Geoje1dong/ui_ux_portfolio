@@ -45,11 +45,14 @@ export default class Articles extends Component {
             <div>
               <p>안녕하세요 <strong>김재현</strong> 입니다.</p>
               <p>저의 <strong>포트폴리오</strong>에 오신것을 환영합니다.</p>
+              {/* <p>실용적이고 유용하며 아름다운 제품을 만들기 위해 많은 작업물을 보며 공부하고 있습니다.</p> */}
+              
             </div>
           </li>
           {workData.results.map((article) => (
             <StyledArticle key={article.id} delay={article.id}>
               <Article article={article} viewIsOpen={this._viewIsOpen(article)}/>
+              {/* <link rel="prefetch" href={process.env.PUBLIC_URL + `${article.content[0].header_img}`} as="image" /> */}
             </StyledArticle>
           ))}
         </ArticleBox>
@@ -84,8 +87,8 @@ const ArticleBox = styled.ul`
   margin:0;
   list-style:none;
   display:flex;
-  top: 8.898895vw;
-  bottom: 5.26593vw;
+  top: 7.898895vw;
+  bottom: 4.26593vw;
   position:absolute;
   overflow:hidden;
   &.articlesFadeIn{
@@ -97,7 +100,7 @@ const ArticleBox = styled.ul`
   >li{
     opacity: 0;
     transform: translateX(700px);
-    padding:0 5.26593vw
+    padding:1vw 5.26593vw;
     display: flex;
     &:first-child{
       align-items: flex-start;

@@ -53,7 +53,7 @@ const workData = {
         {
           "header_h1" : "Rengo App 2.0",
           "header_h2" : "2016.11~ 2017.01",
-          "header_img" : "https://i.ibb.co/ct8QL9b/rengo-bg.jpg",
+          "header_img" : "/img/03/rengoapp_cover.jpg",
           "description" : "렌고2.0 리뉴얼 ios, android App 업데이트",
           "clist" : ["Sketch", "Photoshop", "Co-work"],
           "url" : "/img/rengoapp_ detail.jpg",
