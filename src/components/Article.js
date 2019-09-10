@@ -42,7 +42,7 @@ export default class Article extends React.Component{
     const {article, viewIsOpen} = this.props;
     return(
       <React.Fragment>
-        <Button  onMouseOver={this.articleMouseOver(article)}  onMouseOut={this._articleMouseOut} onClick={viewIsOpen}>
+        <Button  onMouseOver={this.articleMouseOver(article)}  onMouseOut={this._articleMouseOut} onClick={viewIsOpen} imgSize={article.imgSize}>
           <ProjectLabel>{article.label} the project</ProjectLabel>
           
           <img src={process.env.PUBLIC_URL + `${article.img}`} alt={article.title}/>
@@ -103,6 +103,9 @@ const Button = styled.button`
     max-width:600px;
     filter:brightness(80%);
     box-shadow:0px 20px 35px 0px rgba(0, 0, 0, 0.5);
+    @media screen and (max-width : 425px) {
+      ${props => props.imgSize ? `height:60vh;` : `width:60vh;`}
+    }
   }
 `
 

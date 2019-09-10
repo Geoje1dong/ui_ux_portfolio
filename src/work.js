@@ -13,6 +13,7 @@ const workData = {
           "description" : '한국산업인력공단에서 서비스중인 해외취업 채용사이트 월드잡 플러스에서 유지보수 팀원으로 근무하였습니다.\n월드잡 플러스에서 2년을 근무하며 웹 접근성 인증, 모바일, 이력서 첨삭, 파일 첨부, 프로젝트등을 수행하며 유지보수 업무를 하였습니다.',
           "clist" : ["Design", "Javascript, HTML, CSS", "Co-work"],
           "url" : "https://www.worldjob.or.kr",
+          "imgSize" : true,
           "section_imges" : [
             {
               "imgUrl" : '/img/01/worldjob_content.png',

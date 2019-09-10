@@ -1,4 +1,11 @@
 const resumeData = {
+  "contents":[
+    'UI부터 기능 구현까지 개발했을 때 얻는 성취감이 좋아서 프론트엔드 개발자로 직무 전환을 준비하고 있습니다.',
+    '리액트와 es6를 활용하여 개인프로젝트들을 진행하고 있으며 컴포넌트 단위로 재사용가능한 컴포넌트로 만들기 위해 노력하고 있습니다.',
+    '또한 es6, 리덕스, 웹팩 등의 부분을 이해하기 위해 노력하고 있습니다.',
+    '업무에 있어서 강점은 협업에 있습니다. 여러 직군을 경험, 같이 일했기 때문에 원활한 커뮤니케이션이 이루어 질 수 있습니다.',
+    '커뮤니케이션을 통해 문제 해결, 서비스 개선에 도움이 될 수 있을 것입니다. 이러한 점을 바탕으로 저는 아름답고,사용자 친화적인 서비스를 만들고 싶습니다.'
+  ],
   "companysData" : [
     {
       id:0,
@@ -25,7 +32,7 @@ const resumeData = {
       ],
       techstack:'HTML5, CSS3, JavaScript, jquery',
       result:'calc, vw, vh등 css의 새로운 단위에 대해서 조금더 알게 되었습니다.',
-      link:''
+      link:'http://m.worldjob.or.kr/index.do'
     },
     {
       id:1,
@@ -39,7 +46,7 @@ const resumeData = {
       ],
       techstack:'HTML5, CSS3, Bootstrap, Jquery, Sketch',
       result:'부트스트랩이나 자바스크립트에 익숙하지않아서 제대로 활용하지 못한게 아쉬웠습니다.\n이 프로젝트를 계기로 프론트엔드 기술 학습의 필요성을 느꼈고 진행하고 있습니다.',
-      link:''
+      link:'http://partner.rengo.co.kr/'
     },
     {
       id:2,
@@ -54,7 +61,7 @@ const resumeData = {
       ],
       techstack:'React, HTML5, Styled-Component, Router',
       result:'저에게 생소하였던 SPA에 대하여 조금 더 자세히 알게 되었습니다.\n하지만 SPA의 단점인 초기구동 속도, 검색엔진 최적화 문제에 대해 조금 더 알아보아야 할 것 같습니다.',
-      link:''
+      link:'https://geoje1dong.github.io/portfolio/'
     },
     {
       id:3,

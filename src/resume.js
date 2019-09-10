@@ -26,11 +26,9 @@ export default class Resume extends React.Component{
             <IntroText delay="0.9">또한, 실용적이고 유용하며 아름다운 제품을 만들기 위해 많은 작업물을 보며 공부하고 있습니다.</IntroText>
             <IntroText delay="1.2">다양한 기술을 학습하고, 다양한 경험을 통해 좀 더 나은 디자이너로 발전하기 위해 노력하고 있습니다.</IntroText> */}
             {/* <IntroText delay="0">안녕하세요, 저는 김재현 입니다.</IntroText> */}
-            <IntroText delay="0">UI부터 기능 구현까지 개발했을 때 얻는 성취감이 좋아서 프론트엔드 개발자로 직무 전환을 준비하고 있습니다.</IntroText>
-            <IntroText delay="0.3">리액트와 es6를 활용하여 개인프로젝트들을 진행하고 있으며 컴포넌트 단위로 재사용가능한 컴포넌트 단위로 만들기 위해 노력하고 있습니다.</IntroText>
-            <IntroText delay="0.6">또한 es6, 리덕스, 웹팩 등의 부분을 이해하기 위해 노력하고 있습니다.</IntroText>
-            <IntroText delay="0.9">업무에 있어서 강점은 협업에 있습니다. 여러 직군을 경험, 같이 일했기 때문에 원활한 커뮤니케이션이 이루어 질 수 있습니다.</IntroText>
-            <IntroText delay="1.2">커뮤니케이션을 통해 문제 해결, 서비스 개선에 도움이 될 수 있을 것입니다. 이러한 점을 바탕으로 저는 아름답고,사용자 친화적인 서비스를 만들고 싶습니다.</IntroText>
+            {ResumeData.contents.map((content, index) => (
+              <IntroText key={index} delay={0.3 * index}>{content}</IntroText>
+            ))}
           </Intro>
           <Company delay="1.5">
             <h2>Work</h2>
@@ -175,7 +173,10 @@ const IntroText = styled.p`
 `
 
 const Company = styled.ul`
-  >h2{font-size:2.4em;}
+  >h2{
+    font-size:2.4em;
+    margin-bottom:1.5em;
+  }
   transition:all 0.6s cubic-bezier(0.455,0.03,0.515,0.955);
   transition-delay: ${props => props.delay}s;
   margin-bottom:140px;
@@ -201,6 +202,11 @@ const Company = styled.ul`
           margin-bottom:0;
           font-size:12px;
           color:rgba(255,255,255,0.6)
+        }
+        @media screen and (max-width : 768px) {
+          width:100%;
+          float:none;
+          margin-bottom:40px;
         }
       }
       &:last-child{
@@ -233,6 +239,10 @@ const Company = styled.ul`
           >li{
             margin-top:10px;
           }
+        }
+        @media screen and (max-width : 768px) {
+          width:100%;
+          float:none;
         }
       }
     }
