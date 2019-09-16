@@ -237,7 +237,7 @@ const ViewContent = styled.div`
   height:auto !important;
   >section{
     padding:0 5.26593vw 5.26593vw 5.26593vw;
-    display:flex;
+    display:block;
     justify-content:center;
     @media screen and (max-width : 425px) {
       padding:0 0 5.26593vw 0;

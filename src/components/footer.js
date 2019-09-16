@@ -13,8 +13,9 @@ export default class Footer extends React.Component{
 
 const FooterBox = styled.div`
   position:fixed;
-  bottom:2.632965vw;
+  bottom:4.632965vw;
   left:5.26593vw;
   right:5.26593vw;
-  font-size:14px;
+  font-size:12px;
+  color:rgba(255,255,255,0.8)
 `

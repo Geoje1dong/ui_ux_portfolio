@@ -121,7 +121,7 @@ const ArticleBox = styled.ul`
         height:560px;
         width:auto;
         @media screen and (max-width : 425px) {
-          height:60vh;
+          height:50vh;
         }
       }
     }
@@ -138,7 +138,7 @@ const ArticleBox = styled.ul`
     bottom: 10.79779vw;
   }
   @media screen and (max-width : 425px) {
-    top: 30.79779vw;
+    top: 23.79779vw;
     bottom: 10.79779vw;
     >li{
       padding:0 15.26593vw

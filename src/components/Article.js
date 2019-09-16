@@ -104,7 +104,7 @@ const Button = styled.button`
     filter:brightness(80%);
     box-shadow:0px 20px 35px 0px rgba(0, 0, 0, 0.5);
     @media screen and (max-width : 425px) {
-      ${props => props.imgSize ? `height:50vh;` : `width:50vh;`}
+      ${props => props.imgSize ? `height:50vh; width:auto;` : `width:50vh; height:auto;`}
     }
   }
 `
