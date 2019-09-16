@@ -61,7 +61,7 @@ const resumeData = {
       ],
       techstack:'React, HTML5, Styled-Component, Router',
       result:'저에게 생소하였던 SPA에 대하여 조금 더 자세히 알게 되었습니다.\n하지만 SPA의 단점인 초기구동 속도, 검색엔진 최적화 문제에 대해 조금 더 알아보아야 할 것 같습니다.',
-      link:'https://geoje1dong.github.io/portfolio/'
+      link:'https://geoje1dong.github.io/ui_ux_portfolio/'
     },
     {
       id:3,

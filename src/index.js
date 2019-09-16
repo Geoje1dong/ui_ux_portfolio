@@ -11,7 +11,7 @@ import Post from './post'
 
 function App(){
   return(
-    <BrowserRouter basename={'/portfolio'}>
+    <BrowserRouter basename={'/ui_ux_portfolio'}>
       <GlobalStyle />
       <Header />
         <Switch>
