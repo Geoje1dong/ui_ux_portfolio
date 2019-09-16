@@ -16,7 +16,7 @@ const workData = {
           "imgSize" : true,
           "section_imges" : [
             {
-              "imgUrl" : '/img/01/worldjob_content.jpg',
+              "imgUrl" : '/img/01/worldjob_content.png',
               "imgAlt" : '월드잡 상세페이지'
             }
           ]
@@ -38,7 +38,7 @@ const workData = {
           "url" : "http://partner.rengo.co.kr/",
           "section_imges" : [
             {
-              "imgUrl" : '/img/02/rengosolution_content.jpg',
+              "imgUrl" : '/img/02/rengosolution_content.png',
               "imgAlt" : '렌고 상세페이지'
             }
           ]
