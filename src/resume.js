@@ -88,6 +88,7 @@ export default class Resume extends React.Component{
                     {project.result.split('\n').map((result, index) => (
                       <span key={index}>{result}<br /></span>
                     ))}
+                    <a target="_blank" href={project.link} rel="noopener noreferrer">{project.link}</a>
                   </p>
                 </div>
               </li>
