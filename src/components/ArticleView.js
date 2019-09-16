@@ -239,10 +239,13 @@ const ViewContent = styled.div`
     padding:0 5.26593vw 5.26593vw 5.26593vw;
     display:flex;
     justify-content:center;
+    @media screen and (max-width : 425px) {
+      padding:0 0 5.26593vw 0;
+    }
     img{
       max-width:2000px;
-      width:100%;
-      height:auto;
+      width:100vw;
+      height:auot;
     }
   }
 `
