@@ -245,7 +245,7 @@ const ViewContent = styled.div`
     img{
       max-width:2000px;
       width:100vw;
-      height:auot;
+      height:auto !important;
     }
   }
 `
