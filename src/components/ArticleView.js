@@ -128,8 +128,8 @@ export default class ArticleView extends React.Component{
             </IntroBox>
               {viewContent.content[0].section_imges.map((img, index) => (
                 <section key={index}>
-                  {/* <img src={process.env.PUBLIC_URL + `${img.imgUrl}`} alt={img.Alt}/> */}
-                  <img src={img.imgUrl} alt={img.Alt}/>
+                  <img src={process.env.PUBLIC_URL + `${img.imgUrl}`} alt={img.Alt}/>
+                  {/* <img src={img.imgUrl} alt={img.Alt}/> */}
                 </section>
               ))}
           </ViewContent>

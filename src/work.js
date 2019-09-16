@@ -16,7 +16,7 @@ const workData = {
           "imgSize" : true,
           "section_imges" : [
             {
-              "imgUrl" : 'https://i.ibb.co/b75CwZb/worldjob-content.png',
+              "imgUrl" : '/img/01/worldjob_content.jpg',
               "imgAlt" : '월드잡 상세페이지'
             }
           ]
@@ -38,7 +38,7 @@ const workData = {
           "url" : "http://partner.rengo.co.kr/",
           "section_imges" : [
             {
-              "imgUrl" : 'https://i.ibb.co/ZzDYSkC/rengosolution-content.png',
+              "imgUrl" : '/img/02/rengosolution_content.jpg',
               "imgAlt" : '렌고 상세페이지'
             }
           ]
@@ -57,11 +57,11 @@ const workData = {
           "header_img" : "/img/03/rengoapp_cover.jpg",
           "description" : "렌고2.0 리뉴얼 ios, android App 업데이트",
           "clist" : ["Sketch", "Photoshop", "Co-work"],
-          "url" : "/img/rengoapp_ detail.jpg",
+          // "url" : "/img/rengoapp_ detail.jpg",
           "imgSize" : true,
           "section_imges" : [
             {
-              "imgUrl" : 'https://i.ibb.co/wKM3dkg/rengoapp-detail.jpg',
+              "imgUrl" : '/img/03/rengoapp_detail.jpg',
               "imgAlt" : '렌고 상세페이지'
             }
           ]
