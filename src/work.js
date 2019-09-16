@@ -58,6 +58,7 @@ const workData = {
           "description" : "렌고2.0 리뉴얼 ios, android App 업데이트",
           "clist" : ["Sketch", "Photoshop", "Co-work"],
           "url" : "/img/rengoapp_ detail.jpg",
+          "imgSize" : true,
           "section_imges" : [
             {
               "imgUrl" : '/img/03/rengoapp_detail.jpg',
