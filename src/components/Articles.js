@@ -109,8 +109,8 @@ const ArticleBox = styled.ul`
         width:340px;
         padding-top:5.26593vw;
         > p{
-          font-size: 1.3125rem;
-          line-height: 1.4em;
+          font-size: 1.2125rem;
+          line-height: 1.7em;
           margin: 0 0.2em;
           font-weight: 200;
         }
@@ -122,6 +122,13 @@ const ArticleBox = styled.ul`
         width:auto;
         @media screen and (max-width : 425px) {
           height:60vh;
+        }
+      }
+    }
+    &:nth-child(4){
+      > button >img{
+        @media screen and (max-width : 425px) {
+          max-width:260px;
         }
       }
     }
