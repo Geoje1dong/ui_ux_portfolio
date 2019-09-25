@@ -9,16 +9,17 @@ export default class ArticleView extends React.Component{
     dummyBox: false,
     animationEvent: null,
     closeCheck:false,
-    openChek:true
+    openChek:true,
+    mobile : false,
   }
 
   componentDidMount() {
-    console.log('a');
     // setTimeout(() => this.setState({ animationView: "animationIn" }), 0);
     setTimeout(() => this.setState({ animationView:"animationIn"}), 0);
     const scrollbar = Scrollbar.init(document.querySelector(".view"), {
       overscroll: false
     });
+
     scrollbar.addListener((status) => {
       const yPosition = status.offset.y;
       const deviceHeight = window.innerHeight;
@@ -28,6 +29,10 @@ export default class ArticleView extends React.Component{
         this.setState({dummyBox:false})
       }
     });
+
+    if(window.innerWidth < 768 ){
+      this.setState({mobile: true});
+    }
   }
 
   handleClick = (e) => {
@@ -71,7 +76,14 @@ export default class ArticleView extends React.Component{
             <p>{viewContent.content[0].header_h2}</p> */}
           </div>
           <div></div>
-          <ViewHeaderImg backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].header_img}`}/>
+
+
+          {this.state.mobile ? 
+            <ViewHeaderImg backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].mobile_images[0].mianImg}`}/>
+            :
+            <ViewHeaderImg backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].header_img}`}/>
+          }
+
         </ViewHeader>
         <ViewCloseButton onClick={this.handleClick}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.4 59.4"><path d="M29.7 45.3L0 15.6l1.4-1.5 28.3 28.3L58 14.1l1.4 1.5z"/></svg></ViewCloseButton>
         <ViewContentBox className="view">
@@ -126,12 +138,23 @@ export default class ArticleView extends React.Component{
                 <a target="_blank" href={viewContent.content[0].url} rel="noopener noreferrer">{viewContent.content[0].url}</a>
               </IntroText>
             </IntroBox>
-              {viewContent.content[0].section_imges.map((img, index) => (
-                <section key={index}>
-                  <img src={process.env.PUBLIC_URL + `${img.imgUrl}`} alt={img.Alt}/>
-                  {/* <img src={img.imgUrl} alt={img.Alt}/> */}
-                </section>
-              ))}
+            
+              
+
+              {this.state.mobile ? 
+                viewContent.content[0].mobile_images.map((img, index) => (
+                  <section key={index}>
+                    <img src={process.env.PUBLIC_URL + `${img.contentImg}`} alt={img.Alt}/>
+                  </section>
+                ))
+                :
+                viewContent.content[0].section_imges.map((img, index) => (
+                  <section key={index}>
+                    <img src={process.env.PUBLIC_URL + `${img.imgUrl}`} alt={img.Alt}/>
+                    {/* <img src={img.imgUrl} alt={img.Alt}/> */}
+                  </section>
+                ))
+              }
           </ViewContent>
         </ViewContentBox>
         {this.state.dummyBox && <ScrollDummyBox />}
@@ -256,7 +279,7 @@ const IntroBox = styled.div`
 `
 
 const IntroText = styled.div`
-  font-size:14px;
+  font-size:16px;
   line-height:1.5em;
   max-width:1024px;
   margin:0 auto;
@@ -266,9 +289,10 @@ const IntroText = styled.div`
     overflow:hidden;
     > p{
       padding:0;
-      margin:0px 0 20px 0;
-      width:73%;
-      float:left;
+      margin:60px 0 20px 0;
+      // margin:0px 0 20px 0;
+      // width:73%;
+      // float:left;
       display:block;
       &:before{
         content:'';
@@ -282,8 +306,8 @@ const IntroText = styled.div`
       margin:0;
       padding-left:17px;
       display:block;
-      width:22%;
-      float:right;
+      // width:22%;
+      // float:right;
     }
   }
   >a {

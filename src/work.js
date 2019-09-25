@@ -19,6 +19,13 @@ const workData = {
               "imgUrl" : '/img/01/worldjob_content.png',
               "imgAlt" : '월드잡 상세페이지'
             }
+          ],
+          "mobile_images" : [
+            {
+              "contentImg" : '/img/01/m_worldjob_content.jpg',
+              "mianImg" : '/img/01/m_worldjob_main.jpg',
+              "imgAlt" : '월드잡 상세페이지'
+            }
           ]
         }
       ]
@@ -39,6 +46,13 @@ const workData = {
           "section_imges" : [
             {
               "imgUrl" : '/img/02/rengosolution_content.png',
+              "imgAlt" : '렌고 상세페이지'
+            }
+          ],
+          "mobile_images" : [
+            {
+              "contentImg" : '/img/02/m_rengosolution_content.jpg',
+              "mianImg" : '/img/02/rengosolution_main.jpg',
               "imgAlt" : '렌고 상세페이지'
             }
           ]
@@ -62,6 +76,13 @@ const workData = {
           "section_imges" : [
             {
               "imgUrl" : '/img/03/rengoapp_detail.jpg',
+              "imgAlt" : '렌고 상세페이지'
+            }
+          ],
+          "mobile_images" : [
+            {
+              "contentImg" : '/img/03/m_rengoapp_detail.jpg',
+              "mianImg" : '/img/03/m_rengoapp_cover.jpg',
               "imgAlt" : '렌고 상세페이지'
             }
           ]

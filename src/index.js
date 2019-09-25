@@ -8,6 +8,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import Resume from './resume'
 import Post from './post'
+import Test from './test'
 
 function App(){
   return(
@@ -18,6 +19,7 @@ function App(){
           <Route path="/" exact component={Articles} />
           <Route path="/resume/" component={Resume} />
           <Route path="/Post/:id" component={Post}/>
+          <Route path="/test" component={Test}/>
         </Switch>
       <Footer />
     </BrowserRouter>

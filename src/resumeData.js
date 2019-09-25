@@ -11,13 +11,15 @@ const resumeData = {
       id:0,
       title:'진두아이에스, 위지온',
       period:'2017.04 ~ 2019.05',
-      description:['한국산업인력공단에서 운영하는 월드잡플러스 사이트 유지보수 디자인 및 퍼블리싱','월드잡 행사 관련 랜딩페이지 UI 개발','월드잡 행사 관련 포스터 제작']
+      description:['한국산업인력공단에서 운영하는 월드잡플러스 사이트 유지보수 디자인 및 퍼블리싱','월드잡 행사 관련 랜딩페이지 UI 개발','월드잡 행사 관련 포스터 제작'],
+      link:'https://www.worldjob.or.kr/intro.do'
     },
     {
       id:1,
       title:'Rengo',
       period:'2016.05 ~ 2017.02',
-      description:['렌트카 대여 서비스 렌고 UI, 웹 UI개발, 자바스크립트', '렌터카 스케쥴러 역할 및 렌고 연동 서비스 솔루션 디자인 및 퍼블리싱', 'Rengo 앱 디자인']
+      description:['렌트카 대여 서비스 렌고 UI, 웹 UI개발, 자바스크립트', '렌터카 스케쥴러 역할 및 렌고 연동 서비스 솔루션 디자인 및 퍼블리싱', 'Rengo 앱 디자인'],
+      link:'http://rengo.co.kr/'
     }
   ],
   "projectsData" : [
