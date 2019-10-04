@@ -44,6 +44,7 @@ export default class Articles extends Component {
           <li>
             <div>
               <p>안녕하세요 <strong>김재현</strong> 입니다.</p>
+              <p>UI UX 디자이너 <strong>김재현</strong> 입니다.</p>
               <p>저의 <strong>포트폴리오</strong>에 오신것을 환영합니다.</p>
               {/* <p>실용적이고 유용하며 아름다운 제품을 만들기 위해 많은 작업물을 보며 공부하고 있습니다.</p> */}
               
@@ -118,6 +119,15 @@ const ArticleBox = styled.ul`
     }
     &:nth-child(2){
       > button >img{
+        height:500px;
+        width:auto;
+        @media screen and (max-width : 425px) {
+          height:50vh;
+        }
+      }
+    }
+    &:nth-child(3){
+      > button >img{
         height:560px;
         width:auto;
         @media screen and (max-width : 425px) {
@@ -125,7 +135,7 @@ const ArticleBox = styled.ul`
         }
       }
     }
-    &:nth-child(4){
+    &:nth-child(5){
       > button >img{
         @media screen and (max-width : 425px) {
           max-width:260px;

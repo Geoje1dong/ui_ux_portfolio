@@ -10,7 +10,6 @@ export default class ArticleView extends React.Component{
     animationEvent: null,
     closeCheck:false,
     openChek:true,
-    mobile : false,
   }
 
   componentDidMount() {
@@ -29,10 +28,6 @@ export default class ArticleView extends React.Component{
         this.setState({dummyBox:false})
       }
     });
-
-    if(window.innerWidth < 768 ){
-      this.setState({mobile: true});
-    }
   }
 
   handleClick = (e) => {
@@ -76,14 +71,7 @@ export default class ArticleView extends React.Component{
             <p>{viewContent.content[0].header_h2}</p> */}
           </div>
           <div></div>
-
-
-          {this.state.mobile ? 
-            <ViewHeaderImg backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].mobile_images[0].mianImg}`}/>
-            :
-            <ViewHeaderImg backgroundImage={process.env.PUBLIC_URL + `${viewContent.content[0].header_img}`}/>
-          }
-
+          <ViewHeaderImg backgroundImage={viewContent.content[0].header_img}/>
         </ViewHeader>
         <ViewCloseButton onClick={this.handleClick}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.4 59.4"><path d="M29.7 45.3L0 15.6l1.4-1.5 28.3 28.3L58 14.1l1.4 1.5z"/></svg></ViewCloseButton>
         <ViewContentBox className="view">
@@ -138,23 +126,20 @@ export default class ArticleView extends React.Component{
                 <a target="_blank" href={viewContent.content[0].url} rel="noopener noreferrer">{viewContent.content[0].url}</a>
               </IntroText>
             </IntroBox>
-            
-              
-
-              {this.state.mobile ? 
-                viewContent.content[0].mobile_images.map((img, index) => (
-                  <section key={index}>
-                    <img src={process.env.PUBLIC_URL + `${img.contentImg}`} alt={img.Alt}/>
-                  </section>
-                ))
-                :
-                viewContent.content[0].section_imges.map((img, index) => (
-                  <section key={index}>
-                    <img src={process.env.PUBLIC_URL + `${img.imgUrl}`} alt={img.Alt}/>
-                    {/* <img src={img.imgUrl} alt={img.Alt}/> */}
-                  </section>
-                ))
-              }
+            <section>
+              {viewContent.content[0].section_imges.map((img, index) => (
+                <>
+                  <img src={img.imgUrl} alt={img.Alt}  key={index}/>
+                </>
+              ))}
+              {viewContent.content[0].check}
+              {viewContent.content[0].weeklyUi.map((weekly, index) => (
+                <WeeklyUI target="_blank" href={weekly.link} rel="noopener noreferrer" key={index}>
+                  <img src={weekly.imgUrl} alt={weekly.imgTit}/>
+                  <p>{weekly.imgTit}</p>
+                </WeeklyUI>
+              ))}
+            </section>
           </ViewContent>
         </ViewContentBox>
         {this.state.dummyBox && <ScrollDummyBox />}
@@ -164,6 +149,15 @@ export default class ArticleView extends React.Component{
     )
   }
 }
+
+const WeeklyUI = styled.a`
+  display:block;
+  margin-top:160px;
+  >p{
+    font-size:24px;
+    font-weight:700;
+  }
+`
 
 const BlackBox = styled.div`
   background:#f5f5f5;
@@ -259,6 +253,8 @@ const ViewContent = styled.div`
   background:#fff;
   height:auto !important;
   >section{
+    max-width:1536px;
+    margin:0 auto;
     padding:0 5.26593vw 5.26593vw 5.26593vw;
     display:block;
     justify-content:center;
@@ -267,7 +263,8 @@ const ViewContent = styled.div`
     }
     img{
       max-width:2000px;
-      width:100vw;
+      width:100%;
+      // width:100vw;
       height:auto !important;
     }
   }
