@@ -45,7 +45,7 @@ export default class Article extends React.Component{
         <Button  onMouseOver={this.articleMouseOver(article)}  onMouseOut={this._articleMouseOut} onClick={viewIsOpen} imgSize={article.imgSize}>
           <ProjectLabel>{article.label} the project</ProjectLabel>
           
-          <img src={process.env.PUBLIC_URL + `${article.img}`} alt={article.title}/>
+          <img src={article.img} alt={article.title}/>
           {/* <img src={article.img} alt={article.title}/> */}
           <ArticleTitle>
             {mobile ? article.title : title }
