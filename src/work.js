@@ -23,9 +23,14 @@ const workData = {
           ],
           "weeklyUi" : [
             {
-              "imgUrl" : 'https://i.ibb.co/7RPNSjk/weekly01.png',
-              "imgTit" : 'Sign Up, Sign In',
-              "link" : 'https://geoje1dong.github.io/weekly_ui/weekly1'
+              "imgUrl" : 'https://i.ibb.co/FK55Gy5/weekly04.png',
+              "imgTit" : 'Calculator',
+              "link" : 'https://geoje1dong.github.io/weekly_ui/weekly4'
+            },
+            {
+              "imgUrl" : 'https://i.ibb.co/q57hczT/weekly03.png',
+              "imgTit" : 'Landing Page',
+              "link" : 'https://geoje1dong.github.io/weekly_ui/weekly3'
             },
             {
               "imgUrl" : 'https://i.ibb.co/NyTrJJV/weekly02.png',
@@ -33,9 +38,9 @@ const workData = {
               "link" : 'https://geoje1dong.github.io/weekly_ui/weekly2'
             },
             {
-              "imgUrl" : 'https://i.ibb.co/q57hczT/weekly03.png',
-              "imgTit" : 'Landing Page',
-              "link" : 'https://geoje1dong.github.io/weekly_ui/weekly3'
+              "imgUrl" : 'https://i.ibb.co/7RPNSjk/weekly01.png',
+              "imgTit" : 'Sign Up, Sign In',
+              "link" : 'https://geoje1dong.github.io/weekly_ui/weekly1'
             },
             // {
             //   "imgUrl" : 'https://i.ibb.co/x7vf7HL/worldjob-content.png',
