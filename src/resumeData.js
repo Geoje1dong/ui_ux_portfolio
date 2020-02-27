@@ -9,13 +9,20 @@ const resumeData = {
   "companysData" : [
     {
       id:0,
+      title:'위시켓',
+      period:'2019.10 ~ 2019.12',
+      description:['위시켓 자사 컴포넌트 제작 프로젝트 참여','컴포넌트 기능 개발'],
+      link:''
+    },
+    {
+      id:1,
       title:'진두아이에스, 위지온',
       period:'2017.04 ~ 2019.05',
       description:['한국산업인력공단에서 운영하는 월드잡플러스 사이트 유지보수 디자인 및 퍼블리싱','월드잡 행사 관련 랜딩페이지 UI 개발','월드잡 행사 관련 포스터 제작'],
       link:'https://www.worldjob.or.kr/intro.do'
     },
     {
-      id:1,
+      id:2,
       title:'Rengo',
       period:'2016.05 ~ 2017.02',
       description:['렌트카 대여 서비스 렌고 UI, 웹 UI개발, 자바스크립트', '렌터카 스케쥴러 역할 및 렌고 연동 서비스 솔루션 디자인 및 퍼블리싱', 'Rengo 앱 디자인'],
@@ -25,6 +32,19 @@ const resumeData = {
   "projectsData" : [
     {
       id:0,
+      title:'위시켓 자사 UI 컴포넌트',
+      period:'2019.10 ~ 2019.12',
+      description:'위시켓 자사 UI컴포넌트 제작 프로젝트 참여',
+      contribution:[
+        '자사 컴포넌트 사용을 위한 가이드페이지 구축',
+        '제이쿼리 자바스크립트를 활용하여 컴포넌트 동작 기능 구현'
+      ],
+      techstack:'HTML5, CSS3, JavaScript, jquery',
+      result:'calc, vw, vh등 css의 새로운 단위에 대해서 조금더 알게 되었습니다.',
+      link:'http://m.worldjob.or.kr/index.do'
+    },
+    {
+      id:1,
       title:'월드잡 모바일 리뉴얼 작업',
       period:'2017.06 ~ 2017.09',
       description:'월드잡 플러스 모바일 페이지 리뉴얼 작업',
@@ -33,11 +53,11 @@ const resumeData = {
         '포토샵을 활용한 앱 소개 페이지, 스플래시 이미지'
       ],
       techstack:'HTML5, CSS3, JavaScript, jquery',
-      result:'calc, vw, vh등 css의 새로운 단위에 대해서 조금더 알게 되었습니다.',
-      link:'http://m.worldjob.or.kr/index.do'
+      result:'수정이 아닌 플러그인 제작이 처음이라 익숙하지 않아 제이쿼리나 자바스크립트를 제대로 활용하지 못한게 아쉬웠습니다.\n이 프로젝트를 계기로 좀더 프론트엔드 성능분석 학습의 필요성을 느꼈고 진행하고 있습니다.',
+      link:''
     },
     {
-      id:1,
+      id:2,
       title:'렌고 솔루션',
       period:'2016.08  ~ 2016.11',
       description:'렌고와 제휴한 업체들을 위한 차량렌트 솔루션 웹서비스 구축',
@@ -51,7 +71,7 @@ const resumeData = {
       link:'http://partner.rengo.co.kr/'
     },
     {
-      id:2,
+      id:3,
       title:'포트폴리오 사이트 개인 프로젝트',
       period:'2019.06 ~ 2019.09',
       description:'작품을 정리하고 새로운 기술을 배우는 것을 좋아하기 때문에 개인 포트폴리오 사이트를 만들게 되었습니다. 만들면서 웹 기술을 공부하는 데 도움이 많이 되었습니다.',
@@ -66,7 +86,7 @@ const resumeData = {
       link:'https://geoje1dong.github.io/ui_ux_portfolio/'
     },
     {
-      id:3,
+      id:4,
       title:'SNS 클론 개인 프로젝트',
       period:'2019.06 ~ 진행중',
       description:'react를 조금더 손에 익기 위해 만들게 된 개인 프로젝트 입니다.\n인스타그램, 트위터등의 sns등을 참고하여 설계 및 구현하게 되었습니다.\n리트윗, 좋아요, 게시글 등록, 삭제, 팔로워, 팔로잉 구현하였습니다.',
