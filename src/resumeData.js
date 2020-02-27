@@ -41,7 +41,7 @@ const resumeData = {
       ],
       techstack:'HTML5, CSS3, JavaScript, jquery',
       result:'calc, vw, vh등 css의 새로운 단위에 대해서 조금더 알게 되었습니다.',
-      link:'http://m.worldjob.or.kr/index.do'
+      link:''
     },
     {
       id:1,
@@ -54,7 +54,7 @@ const resumeData = {
       ],
       techstack:'HTML5, CSS3, JavaScript, jquery',
       result:'수정이 아닌 플러그인 제작이 처음이라 익숙하지 않아 제이쿼리나 자바스크립트를 제대로 활용하지 못한게 아쉬웠습니다.\n이 프로젝트를 계기로 좀더 프론트엔드 성능분석 학습의 필요성을 느꼈고 진행하고 있습니다.',
-      link:''
+      link:'http://m.worldjob.or.kr/index.do'
     },
     {
       id:2,
